@@ -5,4 +5,5 @@ aws_man=boto3.session.Session(profile_name="root")
 res_api=aws_man.client('resourcegroupstaggingapi', 'us-east-1')
 response=res_api.get_resources()
 for each_item in response['ResourceTagMappingList']:
-    print(each_item['ResourceARN'], each_item['Tags'])
+    for each_tag in each_item['Tags']:
+        print(each_item['ResourceARN'], each_tag['Key'],each_tag['Value'])
