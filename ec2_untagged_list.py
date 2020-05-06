@@ -6,3 +6,9 @@ for each_item in response['Reservations']:
     for each in each_item['Instances']:
         #print(each.get('InstanceId',None),each.get('ImageId',None),each.get('InstanceType',None),each.get('KeyName',None), each['State']['Name'])
         print(each.get('InstanceId',None),each.get('ImageId',None),each.get('InstanceType',None),each['State']['Name'],each.get('Tags',None))
+
+print("<==================================================================================================================>")
+
+vol = ec2_con.describe_volumes()
+for each_vol in vol['Volumes']:
+    print(each_vol['VolumeId'], each_vol['VolumeType'], each_vol['State'], each_vol.get('Tags'))
