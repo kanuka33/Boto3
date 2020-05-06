@@ -8,8 +8,7 @@ for user in iam_con.list_users()['Users']:
     user['UserName'],
     user['UserId'],
     user['Arn'],
-    user['CreateDate'],
-    user.get('Tags',None)
+    user['CreateDate']
         )
     )
     
